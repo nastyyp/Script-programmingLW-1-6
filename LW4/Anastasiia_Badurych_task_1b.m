@@ -1,0 +1,16 @@
+clear;
+clc;
+close all;
+x = linspace(-2, 2, 100);
+y = linspace(-2, 2, 100);
+[X, Y] = meshgrid(x, y);
+Z = sin(abs(X + Y) / 20) .* exp(-abs(X + Y));
+figure;
+surf(X, Y, Z);
+shading interp;
+colormap parula;
+xlabel('x');
+ylabel('y');
+zlabel('f(x,y)');
+title('f(x,y) = sin(|x+y|/20)e^{-|x+y|}');
+view(60, 60);
